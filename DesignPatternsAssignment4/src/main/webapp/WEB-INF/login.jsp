@@ -5,6 +5,7 @@
 <html>
     <head>
 
+
    <title>Login</title>
    </head>
    <body>
@@ -15,7 +16,7 @@
 	<form action="login" method="post">
 	<div>
 	<label>
-	Username:
+	User name:
 	</label>
 	<input type="text" id="name" name="name" placeholder="name" class="form-control"/>
 	<br>
@@ -25,10 +26,13 @@
 	<input type="text" id="password" name="password" placeholder="password" class="form-control"/>
 	</div>
 
+	
 	</div>
 	<button id="loginButton" class="form-control">Login</button>
 	</form>
 	</div>
-
+	
+	
+     
     </body> 
 </html>
