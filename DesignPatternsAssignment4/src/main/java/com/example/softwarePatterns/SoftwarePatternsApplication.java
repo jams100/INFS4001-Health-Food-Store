@@ -6,7 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = HelloController.class)
+@ComponentScan(basePackageClasses = MainController.class)
 public class SoftwarePatternsApplication {
 
 	public static void main(String[] args) {

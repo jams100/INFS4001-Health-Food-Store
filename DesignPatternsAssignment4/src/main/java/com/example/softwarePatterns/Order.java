@@ -10,38 +10,38 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-	
+
 @Entity
-	@Table(name="AnOrder")
-	public class Order {
-		@Id
-		@GeneratedValue(strategy=GenerationType.AUTO)
-		private int id;
-		String name;
-		
-		public String getName() {
-			return name;
-		}
-		public void setName(String name) {
-			this.name = name;
-		}
-		public int getId() {
-			return id;
-		}
-		public void setId(int id) {
-			this.id = id;
-		}
+@Table(name="AnOrder")
+public class Order {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	String name;
 
-		public Order() {
-		}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 
-		@OneToOne
-		Cart cart;
+	public Order() {
+	}
 
-		public Cart getCart() {
-			return cart;
-		}
-		public void setCart(Cart cart) {
-			this.cart = cart;
-		}
+	@OneToOne
+	Cart cart;
+
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 }

@@ -17,20 +17,19 @@ import javax.persistence.OneToOne;
 
 @Entity // Telling Hibernate to make a table out of this class
 public class User {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
-    private String name;
-    private String email;
-    private String password;
-    private String address;
-   
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "id", cascade = CascadeType.ALL)
-  //  ArrayList<Order>orders = new ArrayList<>();
-    private Set<Order>orders = new HashSet<>();
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	private String name;
+	private String email;
+	private String password;
+	private String address;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    Cart cart;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id", cascade = CascadeType.ALL)
+	private Set<Order>orders = new HashSet<>();
+
+	@OneToOne(cascade = CascadeType.ALL)
+	Cart cart;
 
 	public Set<Order> getOrders() {
 		return orders;
@@ -47,18 +46,18 @@ public class User {
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-    
-    private String paymentMethod;
-   public String getPaymentMethod() {
+
+	private String paymentMethod;
+	public String getPaymentMethod() {
 		return paymentMethod;
 	}
 
 	public void setPaymentMethod(String paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
-	
-	
-    
+
+
+
 	public String getAddress() {
 		return address;
 	}
@@ -66,9 +65,7 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-    
-    //@OneToMany
-    
+
 	public String getPassword() {
 		return password;
 	}
@@ -100,11 +97,11 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public User() {
-		
+
 	}
-	
+
 	public User(int id, String name, String email, String password, String address, String payment) {
 		this.id = id;
 		this.name = name;
