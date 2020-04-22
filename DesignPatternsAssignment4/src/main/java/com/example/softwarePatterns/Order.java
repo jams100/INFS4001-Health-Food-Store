@@ -35,6 +35,10 @@ public class Order {
 	public Order() {
 	}
 
+	public Order(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@OneToOne( cascade = CascadeType.ALL)
 	Cart cart;
 
