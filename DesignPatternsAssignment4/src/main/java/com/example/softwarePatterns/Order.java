@@ -6,10 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 
 @Entity
 @Table(name="AnOrder")
@@ -35,7 +35,7 @@ public class Order {
 	public Order() {
 	}
 
-	@OneToOne
+	@OneToOne( cascade = CascadeType.ALL)
 	Cart cart;
 
 	public Cart getCart() {

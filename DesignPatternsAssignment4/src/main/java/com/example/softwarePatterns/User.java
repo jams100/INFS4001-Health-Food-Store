@@ -15,7 +15,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
-@Entity // Telling Hibernate to make a table out of this class
+@Entity //Telling Hibernate to make a table out of this class
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -25,7 +25,7 @@ public class User {
 	private String password;
 	private String address;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Set<Order>orders = new HashSet<>();
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -55,7 +55,6 @@ public class User {
 	public void setPaymentMethod(String paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
-
 
 
 	public String getAddress() {
@@ -102,12 +101,11 @@ public class User {
 
 	}
 
-	public User(int id, String name, String email, String password, String address, String payment) {
+	public User(int id, String name, String email, String password, String address) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.address = address;
-		this.paymentMethod = payment;
 	}
 }

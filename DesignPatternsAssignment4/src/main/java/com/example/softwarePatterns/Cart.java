@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 
 @Entity
 public class Cart {
@@ -16,7 +18,8 @@ public class Cart {
 	    @GeneratedValue(strategy=GenerationType.AUTO)
 	    private int id;
 	
-	@OneToMany
+	//@OneToMany
+	 @OneToMany(cascade = CascadeType.ALL)
 	Set<StockItem>items = new HashSet<>();
 	
 	public int getId() {
