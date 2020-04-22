@@ -108,4 +108,10 @@ public class User {
 		this.password = password;
 		this.address = address;
 	}
+	
+	@Override
+	public String login() {
+		// TODO Auto-generated method stub
+		return "success";
+	}
 }

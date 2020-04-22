@@ -10,6 +10,8 @@ public class Card {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
+	private String firstName, surname, address, town, county, cardNumber;
+	private int cardType, expiryMonth, expiryYear;
 	
 	public int getId() {
 		return id;
@@ -91,8 +93,7 @@ public class Card {
 		this.expiryYear = expiryYear;
 	}
 
-	private String firstName, surname, address, town, county, cardNumber;
-	private int cardType, expiryMonth, expiryYear;
+	
 
 	public Card(String firstName, String surname, String address, String town, String county, 
 			String cardNumber, int cardType, int expiryMonth, int expiryYear) {
